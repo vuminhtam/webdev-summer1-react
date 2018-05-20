@@ -11,6 +11,7 @@ class LessonTabs extends React.Component {
         }
 
         this.lessonService = LessonService.instance;
+        this.deleteLesson = this.deleteLesson.bind(this);
     }
 
     componentWillReceiveProps() {
@@ -29,13 +30,22 @@ class LessonTabs extends React.Component {
         this.setState({lessons: lessons})
     }
 
+    deleteLesson(id) {
+        this.lessonService
+            .deleteLesson(id)
+            .then(() => {
+                this.findLessonForModule(this.props.courseId, this.props.moduleId)
+            });
+    }
+
     renderLessonTabs() {
         var self = this;
         let lessons = this.state.lessons.map(function (lesson) {
             return <Lesson key={lesson.id}
                            info={lesson}
                            courseId={self.props.courseId}
-                           moduleId={self.props.moduleId}/>
+                           moduleId={self.props.moduleId}
+                           delete={self.deleteLesson}/>
         });
         return lessons;
     }

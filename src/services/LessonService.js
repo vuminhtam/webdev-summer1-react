@@ -51,6 +51,7 @@ class LessonService {
     }
 
     deleteLesson(id) {
+        console.log('delete lesson')
         return fetch(LESSON_API_URL + '/' + id, {
             method: 'DELETE'
         })
