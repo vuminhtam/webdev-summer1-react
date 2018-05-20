@@ -20,6 +20,7 @@ class TopicList extends React.Component {
         this.topicService = TopicService.instance;
         this.createTopic = this.createTopic.bind(this);
         this.titleChanged = this.titleChanged.bind(this);
+        this.deleteTopic = this.deleteTopic.bind(this);
     }
 
     setParams(params) {
@@ -58,9 +59,11 @@ class TopicList extends React.Component {
     }
 
     renderList() {
+        var self = this;
         let res = this.state.topics.map(function (one) {
             return <Topic key={one.id}
-                          info={one}/>
+                          info={one}
+                          delete={self.deleteTopic}/>
         });
         return res;
     }
@@ -71,18 +74,29 @@ class TopicList extends React.Component {
         });
     }
 
-    createTopic() {
-        console.log(this.state.params)
+    deleteTopic(id) {
         this.topicService
-            .createTopic(
-                this.state.params.cid,
-                this.state.params.mid,
-                this.state.params.lid,
-                this.state.input)
+            .deleteTopic(id)
             .then(() => {
                 this.findTopicsForLesson(this.state.params.cid, this.state.params.mid, this.state.params.lid)
             });
+    }
 
+    createTopic() {
+        if(this.state.input.title != "") {
+            this.topicService
+                .createTopic(
+                    this.state.params.cid,
+                    this.state.params.mid,
+                    this.state.params.lid,
+                    this.state.input)
+                .then(() => {
+                    this.findTopicsForLesson(this.state.params.cid, this.state.params.mid, this.state.params.lid)
+                });
+        }
+        else {
+            alert("Please enter topic title")
+        }
     }
 
     render() {
