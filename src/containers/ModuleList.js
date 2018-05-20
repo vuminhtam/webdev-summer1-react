@@ -6,7 +6,6 @@ export default
 class ModuleList extends React.Component {
     constructor(props) {
         super(props);
-        this.moduleService = ModuleService.instance;
         this.state = {
             courseId: '',
             inputModule: {
@@ -14,6 +13,8 @@ class ModuleList extends React.Component {
             },
             modules: []
         };
+
+        this.moduleService = ModuleService.instance;
         //declare functions of this class
         this.titleChanged = this.titleChanged.bind(this);
         this.createModule = this.createModule.bind(this);

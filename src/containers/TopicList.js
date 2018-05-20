@@ -63,6 +63,7 @@ class TopicList extends React.Component {
         let res = this.state.topics.map(function (one) {
             return <Topic key={one.id}
                           info={one}
+                          params={self.state.params}
                           delete={self.deleteTopic}/>
         });
         return res;
@@ -109,7 +110,8 @@ class TopicList extends React.Component {
                             <div className="input-group">
                                 <input type="text" className="form-control"
                                        placeholder="New topic"
-                                       onChange={this.titleChanged}></input>
+                                       onChange={this.titleChanged}>
+                                </input>
                                 <div className="input-group-btn">
                                     <button className="btn btn-default"
                                             onClick={this.createTopic}>

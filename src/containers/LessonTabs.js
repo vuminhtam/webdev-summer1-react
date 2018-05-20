@@ -4,6 +4,7 @@ import LessonService from "../services/LessonService";
 import TopicList from "./TopicList";
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import CourseEditor from "./CourseEditor";
+import CourseCard from "../component/CourseCard";
 
 export default
 class LessonTabs extends React.Component {
@@ -103,9 +104,17 @@ class LessonTabs extends React.Component {
                     </li>
                 </ul>
 
-                <Route path="/course/:cid/module/:mid/lesson/:lid"
-                       component={TopicList}>
-                </Route>
+                <ul>
+                    <Route path="/course/:cid/module/:mid/lesson/:lid"
+                           component={TopicList}>
+                    </Route>
+                </ul>
+
+                <ul>
+                    <Route path="/course/:cid/module/:mid/lesson/:lid/topic/:tid"
+                           component={CourseCard}>
+                    </Route>
+                </ul>
             </div>
             </Router>
     );}
