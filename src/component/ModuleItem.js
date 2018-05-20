@@ -1,14 +1,17 @@
-import React from 'react';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default class ModuleItem
-    extends React.Component {
+export default
+class ModuleItem extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
         return (
-            <li className="list-group-item">
-                {this.props.info.title}
+                <li className="list-group-item">
+                    <Link to={`/course/${this.props.courseId}/module/${this.props.info.id}`}>
+                    {this.props.info.title}
+                    </Link>
 
                 <span className="float-right">
                         <button onClick={() =>
@@ -17,7 +20,7 @@ export default class ModuleItem
                         <i className="fa fa-trash"></i>
                         </button>
                 </span>
-            </li>
+                </li>
         );
     }
 }

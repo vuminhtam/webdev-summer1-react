@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import ModuleItem from "../component/ModuleItem";
 import ModuleService from "../services/ModuleService";
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import ModuleEdit from "./ModuleEdit"
 
 export default
 class ModuleList extends React.Component {
@@ -66,51 +68,55 @@ class ModuleList extends React.Component {
             return <ModuleItem key={module.id}
                                info={module}
                                delete={self.deleteModule}/>
-        })
+        });
         return modules;
     }
 
     render() {
         return (
-            <div>
-                {/*<table className="table">*/}
-                    {/*<thead>*/}
-                    {/*<tr>*/}
-                        {/*<th>*/}
-                            {/*<input className="form-control"*/}
-                                   {/*value={this.state.inputModule.title}*/}
-                                   {/*onChange={this.titleChanged}*/}
-                                   {/*placeholder="Create a module"/>*/}
-                        {/*</th>*/}
-                        {/*<th>*/}
-                            {/*<button className="btn btn-primary btn-block"*/}
-                                    {/*onClick={this.createModule}>*/}
-                                {/*<i className="fa fa-plus"></i>*/}
-                            {/*</button>*/}
-                        {/*</th>*/}
-                    {/*</tr>*/}
-                    {/*</thead>*/}
-                    {/*<tbody>*/}
-                    {/*<ul className="list-group">*/}
-                        {/*{this.renderListOfModules()}*/}
-                    {/*</ul>*/}
-                    {/*</tbody>*/}
-                {/*</table>*/}
-
-
-                <input className="form-control"
-                   value={this.state.inputModule.title}
-                   onChange={this.titleChanged}
-                   placeholder="Create a module"/>
-                <button className="btn btn-primary btn-block"
-                    onClick={this.createModule}>
-                    <i className="fa fa-plus"></i>
-                </button>
-                <ul className="list-group">
-                    {this.renderListOfModules()}
-                </ul>
-            </div>
-        );
+//            <Router>
+                //<div>
+                //     {/*<table className="table">*/}
+                //         {/*<thead>*/}
+                //         {/*<tr>*/}
+                //             {/*<th>*/}
+                //                 {/*<input className="form-control"*/}
+                //                        {/*value={this.state.inputModule.title}*/}
+                //                        {/*onChange={this.titleChanged}*/}
+                //                        {/*placeholder="Create a module"/>*/}
+                //             {/*</th>*/}
+                //             {/*<th>*/}
+                //                 {/*<button className="btn btn-primary btn-block"*/}
+                //                         {/*onClick={this.createModule}>*/}
+                //                     {/*<i className="fa fa-plus"></i>*/}
+                //                 {/*</button>*/}
+                //             {/*</th>*/}
+                //         {/*</tr>*/}
+                //         {/*</thead>*/}
+                //         {/*<tbody>*/}
+                //         {/*<ul className="list-group">*/}
+                //             {/*{this.renderListOfModules()}*/}
+                //         {/*</ul>*/}
+                //         {/*</tbody>*/}
+                //     {/*</table>*/}
+                //
+                //     {/*<Route path="/course/:courseId/module/:moduleId"*/}
+                //            {/*component= {ModuleEdit}/>*/}
+                <div>
+                    <input className="form-control"
+                       value={this.state.inputModule.title}
+                       onChange={this.titleChanged}
+                       placeholder="Create a module"/>
+                    <button className="btn btn-primary btn-block"
+                        onClick={this.createModule}>
+                        <i className="fa fa-plus"></i>
+                    </button>
+                    <ul className="list-group">
+                        {this.renderListOfModules()}
+                    </ul>
+                </div>
+            // </Router>
+        )
     }
 
     componentWillReceiveProps(newProps){

@@ -1,6 +1,7 @@
 import React from 'react'
 import ModuleList from "./ModuleList";
 import LessonTabs from "./LessonTabs";
+import ModuleEdit from "./ModuleEdit";
 
 export default
 class CourseEditor extends React.Component {
@@ -24,10 +25,12 @@ class CourseEditor extends React.Component {
             <h2>Editing course: {this.state.id}</h2>
             <div className="row">
                 <div className="col-4">
+                    <h4>Modules</h4>
                     <ModuleList courseId={this.state.id}/>
                 </div>
                 <div className="col-8">
-                    <LessonTabs/>
+                    <h4>Module Editor</h4>
+                    <ModuleEdit/>
                 </div>
             </div>
         </div>
