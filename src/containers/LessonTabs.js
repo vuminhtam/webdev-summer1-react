@@ -1,6 +1,7 @@
 import React from 'react'
 import Lesson from "../component/Lesson";
 import LessonService from "../services/LessonService";
+import TopicList from "./TopicList";
 
 export default
 class LessonTabs extends React.Component {
@@ -99,6 +100,9 @@ class LessonTabs extends React.Component {
                     </li>
                 </ul>
 
+                <TopicList courseId={this.props.courseId}
+                           moduleId={this.props.moduleId}
+                           lessonId={1}/>
             </div>
     );}
 

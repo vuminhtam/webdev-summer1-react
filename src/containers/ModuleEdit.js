@@ -61,7 +61,6 @@ class ModuleEdit extends React.Component {
                 <LessonTabs
                     courseId={this.state.courseId}
                     moduleId={this.state.moduleId}/>
-                <TopicList/>
             </div>
 
         )

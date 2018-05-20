@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import ModuleItem from "../component/ModuleItem";
 import ModuleService from "../services/ModuleService";
 
@@ -67,30 +67,6 @@ class ModuleList extends React.Component {
     render() {
         return (
                 <div>
-                     {/*<table className="table">*/}
-                         {/*<thead>*/}
-                         {/*<tr>*/}
-                             {/*<th>*/}
-                                 {/*<input className="form-control"*/}
-                                        {/*value={this.state.inputModule.title}*/}
-                                        {/*onChange={this.titleChanged}*/}
-                                        {/*placeholder="Create a module"/>*/}
-                             {/*</th>*/}
-                             {/*<th>*/}
-                                 {/*<button className="btn btn-primary btn-block"*/}
-                                         {/*onClick={this.createModule}>*/}
-                                     {/*<i className="fa fa-plus"></i>*/}
-                                 {/*</button>*/}
-                             {/*</th>*/}
-                         {/*</tr>*/}
-                         {/*</thead>*/}
-                         {/*<tbody>*/}
-                         {/*<ul className="list-group">*/}
-                             {/*{this.renderListOfModules()}*/}
-                         {/*</ul>*/}
-                         {/*</tbody>*/}
-                     {/*</table>*/}
-
                     <input className="form-control"
                        value={this.state.inputModule.title}
                        onChange={this.titleChanged}
