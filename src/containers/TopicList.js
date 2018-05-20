@@ -7,15 +7,28 @@ export default
 class TopicList extends React.Component {
     constructor(props) {
         super(props);
-        this.topicService = TopicService.instance;
         this.state = {
+            params: {
+              cid:'', mid:'', lid:''
+            },
+            input: {
+                title: ''
+            },
             topics: []
         };
+
+        this.topicService = TopicService.instance;
+        this.createTopic = this.createTopic.bind(this);
+        this.titleChanged = this.titleChanged.bind(this);
     }
 
+    setParams(params) {
+        this.setState({params: params})
+    }
 
     componentDidMount() {
         if(!this.isEmpty(this.props)){
+            this.setParams(this.props.match.params);
             var cid = this.props.match.params.cid;
             var mid = this.props.match.params.mid;
             var lid = this.props.match.params.lid;
@@ -43,13 +56,54 @@ class TopicList extends React.Component {
         this.setState({topics: list})
     }
 
+    renderList() {
+        let res = this.state.topics.map(function (one) {
+            return <Topic key={one.id}
+                          info={one}/>
+        });
+        return res;
+    }
+
+    titleChanged(event) {
+        this.setState({input:
+                {title: event.target.value}
+        });
+    }
+
+    createTopic() {
+        console.log(this.state.params)
+        this.topicService
+            .createTopic(
+                this.state.params.cid,
+                this.state.params.mid,
+                this.state.params.lid,
+                this.state.input)
+            .then(() => {
+                this.findTopicsForLesson(this.props.cid, this.props.mid, this.props.lid)
+            });
+
+    }
+
     render() {
         return (
             <div>
                 <ul className="nav nav-pills">
-                    <Topic/>
-                    <Topic/>
-                    <Topic/>
+                    {this.renderList}
+                    <li className="nav-item">
+                        <a className="nav-link disabled">
+                            <div className="input-group">
+                                <input type="text" className="form-control"
+                                       placeholder="New topic"
+                                       onChange={this.titleChanged}></input>
+                                <div className="input-group-btn">
+                                    <button className="btn btn-default"
+                                            onClick={this.createTopic}>
+                                        <i className="fa fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
             </div>
         )

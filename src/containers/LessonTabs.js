@@ -90,7 +90,7 @@ class LessonTabs extends React.Component {
                         <a className="nav-link disabled">
                             <div className="input-group">
                                 <input type="text" className="form-control"
-                                       placeholder="New lesson title"
+                                       placeholder="New lesson"
                                        onChange={this.titleChanged}></input>
                                     <div className="input-group-btn">
                                         <button className="btn btn-default"
