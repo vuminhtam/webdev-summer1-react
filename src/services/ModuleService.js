@@ -25,8 +25,6 @@ export default class ModuleService {
     }
 
     findModuleById(moduleID) {
-        var url = MODULE_API_URL.replace('MID', moduleID);
-        console.log(url)
         return fetch(
             MODULE_API_URL
                 .replace('MID', moduleID))

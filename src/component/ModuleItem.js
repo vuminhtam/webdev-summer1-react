@@ -6,6 +6,7 @@ class ModuleItem extends React.Component {
     constructor(props) {
         super(props);
     }
+
     render() {
         return (
                 <li className="list-group-item">

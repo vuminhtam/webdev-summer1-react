@@ -110,8 +110,7 @@ class ModuleList extends React.Component {
     }
 
     componentWillReceiveProps(newProps){
-        this.setState({courseId:
-                newProps.courseId
+        this.setState({courseId: newProps.courseId
         });
         this.findAllModulesForCourse(newProps.courseId)
     }

@@ -1,5 +1,6 @@
 import React from 'react';
 import ModuleService from "../services/ModuleService";
+import LessonTabs from "./LessonTabs";
 export default
 class ModuleEdit extends React.Component {
     constructor(props) {
@@ -49,18 +50,15 @@ class ModuleEdit extends React.Component {
                 .then((moduleInfo) => {
                     this.setState({title: moduleInfo.title});
                 });
-            console.log('setTitle!!' + this.state.title)
         }
     }
 
 
     render() {
-        var t = this.state.title;
-        var id = this.state.moduleId;
         return (
-            <div>
-                <h1>Module: {t}</h1>
-            </div>
+                <LessonTabs
+                    courseId={this.state.courseId}
+                    moduleId={this.state.moduleId}/>
         )
     }
 
