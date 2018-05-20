@@ -49,7 +49,8 @@ class TopicList extends React.Component {
     findTopicsForLesson(cid, mid, lid) {
         this.topicService
             .findAllTopicForLesson(cid, mid, lid)
-            .then((topics) => {this.setTopics(topics)});
+            .then((topics) => {
+                this.setTopics(topics)});
     }
 
     setTopics(list) {
@@ -79,7 +80,7 @@ class TopicList extends React.Component {
                 this.state.params.lid,
                 this.state.input)
             .then(() => {
-                this.findTopicsForLesson(this.props.cid, this.props.mid, this.props.lid)
+                this.findTopicsForLesson(this.state.params.cid, this.state.params.mid, this.state.params.lid)
             });
 
     }
@@ -88,7 +89,7 @@ class TopicList extends React.Component {
         return (
             <div>
                 <ul className="nav nav-pills">
-                    {this.renderList}
+                    {this.renderList()}
                     <li className="nav-item">
                         <a className="nav-link disabled">
                             <div className="input-group">
