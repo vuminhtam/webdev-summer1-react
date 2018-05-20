@@ -9,7 +9,6 @@ import CourseList from "./containers/CourseList";
 
 ReactDOM.render(
     <div>
-        <CourseList/>
         <CourseManager/>
     </div>,
     document.getElementById('root')
