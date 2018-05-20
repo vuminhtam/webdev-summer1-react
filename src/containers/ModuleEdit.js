@@ -1,6 +1,7 @@
 import React from 'react';
 import ModuleService from "../services/ModuleService";
 import LessonTabs from "./LessonTabs";
+import TopicList from "./TopicList";
 export default
 class ModuleEdit extends React.Component {
     constructor(props) {
@@ -56,9 +57,13 @@ class ModuleEdit extends React.Component {
 
     render() {
         return (
+            <div>
                 <LessonTabs
                     courseId={this.state.courseId}
                     moduleId={this.state.moduleId}/>
+                <TopicList/>
+            </div>
+
         )
     }
 
