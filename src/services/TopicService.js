@@ -39,7 +39,7 @@ class TopicService {
     }
 
     createTopic(cid, mid, lid, topic) {
-        console.log(JSON.stringify(lesson));
+        console.log(JSON.stringify(topic));
         return fetch(TOPIC_LESSON_URL.replace('CID', cid).replace('MID', mid).replace('LID', lid), {
             body: JSON.stringify(topic),
             headers: {

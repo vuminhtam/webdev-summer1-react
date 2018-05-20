@@ -7,7 +7,6 @@ class Lesson extends React.Component {
         super(props);
     }
 
-
     render() {
         return (
             <div>

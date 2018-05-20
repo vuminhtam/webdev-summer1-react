@@ -2,6 +2,8 @@ import React from 'react'
 import Lesson from "../component/Lesson";
 import LessonService from "../services/LessonService";
 import TopicList from "./TopicList";
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import CourseEditor from "./CourseEditor";
 
 export default
 class LessonTabs extends React.Component {
@@ -80,6 +82,7 @@ class LessonTabs extends React.Component {
 
     render() {
         return (
+            <Router>
             <div>
                 <ul className="nav nav-tabs">
                     {this.renderLessonTabs()}
@@ -100,10 +103,11 @@ class LessonTabs extends React.Component {
                     </li>
                 </ul>
 
-                <TopicList courseId={this.props.courseId}
-                           moduleId={this.props.moduleId}
-                           lessonId={1}/>
+                <Route path="/course/:cid/module/:mid/lesson/:lid"
+                       component={TopicList}>
+                </Route>
             </div>
+            </Router>
     );}
 
     isEmpty(obj) {
