@@ -67,6 +67,7 @@ class ModuleList extends React.Component {
         let modules = this.state.modules.map(function (module) {
             return <ModuleItem key={module.id}
                                info={module}
+                               courseId={self.state.courseId}
                                delete={self.deleteModule}/>
         });
         return modules;
@@ -74,35 +75,35 @@ class ModuleList extends React.Component {
 
     render() {
         return (
-//            <Router>
-                //<div>
-                //     {/*<table className="table">*/}
-                //         {/*<thead>*/}
-                //         {/*<tr>*/}
-                //             {/*<th>*/}
-                //                 {/*<input className="form-control"*/}
-                //                        {/*value={this.state.inputModule.title}*/}
-                //                        {/*onChange={this.titleChanged}*/}
-                //                        {/*placeholder="Create a module"/>*/}
-                //             {/*</th>*/}
-                //             {/*<th>*/}
-                //                 {/*<button className="btn btn-primary btn-block"*/}
-                //                         {/*onClick={this.createModule}>*/}
-                //                     {/*<i className="fa fa-plus"></i>*/}
-                //                 {/*</button>*/}
-                //             {/*</th>*/}
-                //         {/*</tr>*/}
-                //         {/*</thead>*/}
-                //         {/*<tbody>*/}
-                //         {/*<ul className="list-group">*/}
-                //             {/*{this.renderListOfModules()}*/}
-                //         {/*</ul>*/}
-                //         {/*</tbody>*/}
-                //     {/*</table>*/}
-                //
-                //     {/*<Route path="/course/:courseId/module/:moduleId"*/}
-                //            {/*component= {ModuleEdit}/>*/}
+           <Router>
                 <div>
+                     {/*<table className="table">*/}
+                         {/*<thead>*/}
+                         {/*<tr>*/}
+                             {/*<th>*/}
+                                 {/*<input className="form-control"*/}
+                                        {/*value={this.state.inputModule.title}*/}
+                                        {/*onChange={this.titleChanged}*/}
+                                        {/*placeholder="Create a module"/>*/}
+                             {/*</th>*/}
+                             {/*<th>*/}
+                                 {/*<button className="btn btn-primary btn-block"*/}
+                                         {/*onClick={this.createModule}>*/}
+                                     {/*<i className="fa fa-plus"></i>*/}
+                                 {/*</button>*/}
+                             {/*</th>*/}
+                         {/*</tr>*/}
+                         {/*</thead>*/}
+                         {/*<tbody>*/}
+                         {/*<ul className="list-group">*/}
+                             {/*{this.renderListOfModules()}*/}
+                         {/*</ul>*/}
+                         {/*</tbody>*/}
+                     {/*</table>*/}
+
+                     <Route path="/course/:courseId/module/:moduleId"
+                            component= {ModuleEdit}/>
+
                     <input className="form-control"
                        value={this.state.inputModule.title}
                        onChange={this.titleChanged}
@@ -115,7 +116,7 @@ class ModuleList extends React.Component {
                         {this.renderListOfModules()}
                     </ul>
                 </div>
-            // </Router>
+           </Router>
         )
     }
 
