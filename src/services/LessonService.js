@@ -38,8 +38,9 @@ class LessonService {
             });
     }
 
-    createLesson(lesson) {
-        return fetch(LESSON_API_URL, {
+    createLesson(cid, mid, lesson) {
+        console.log(JSON.stringify(lesson));
+        return fetch(LESSON_MODULE_URL.replace('CID', cid).replace('MID', mid), {
             body: JSON.stringify(lesson),
             headers: {
                 'Content-Type': 'application/json'

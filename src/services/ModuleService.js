@@ -15,6 +15,7 @@ export default class ModuleService {
     }
 
     createModule(courseId, module) {
+        console.log(JSON.stringify(module))
         return fetch(COURSE_MODULE_API_URL.replace('CID', courseId), {
             body: JSON.stringify(module),
             headers: { 'Content-Type': 'application/json' },

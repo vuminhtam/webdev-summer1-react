@@ -33,7 +33,6 @@ class ModuleList extends React.Component {
     }
 
     createModule() {
-        console.log('create module');
         this.moduleService
             .createModule(
                 this.state.courseId,
