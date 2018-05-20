@@ -10,7 +10,7 @@ class ModuleItem extends React.Component {
         return (
                 <li className="list-group-item">
                     <Link to={`/course/${this.props.courseId}/module/${this.props.info.id}`}>
-                    {this.props.info.title}
+                    Module {this.props.order} - {this.props.info.title}
                     </Link>
 
                 <span className="float-right">

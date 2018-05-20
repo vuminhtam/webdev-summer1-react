@@ -1,6 +1,6 @@
 let _singleton = Symbol();
 const COURSE_MODULE_API_URL = 'http://localhost:8080/api/course/CID/module';;
-const MODULE_API_URL = 'http://localhost:8080/api//module/MID';;
+const MODULE_API_URL = 'http://localhost:8080/api/module/MID';
 
 
 export default class ModuleService {
@@ -22,6 +22,17 @@ export default class ModuleService {
         }).then(function (response) {
             return response.json();
         })
+    }
+
+    findModuleById(moduleID) {
+        var url = MODULE_API_URL.replace('MID', moduleID);
+        console.log(url)
+        return fetch(
+            MODULE_API_URL
+                .replace('MID', moduleID))
+            .then(function (response) {
+                return response.json();
+            })
     }
 
     findAllModulesForCourse(courseId) {

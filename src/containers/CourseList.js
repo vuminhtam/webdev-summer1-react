@@ -42,7 +42,6 @@ class CourseList extends React.Component {
                 <h2>Course List</h2>
                 <table className="table">
                     <thead>
-                    <tr><th>Title</th></tr>
                     <tr>
                         <th><input onChange={this.titleChanged}
                                    className="form-control" id="titleFld"

@@ -56,8 +56,10 @@ class ModuleList extends React.Component {
 
     renderListOfModules() {
         var self = this;
+        var i = 1;
         let modules = this.state.modules.map(function (module) {
             return <ModuleItem key={module.id}
+                               order={i++}
                                info={module}
                                courseId={self.state.courseId}
                                delete={self.deleteModule}/>
@@ -115,7 +117,6 @@ class ModuleList extends React.Component {
     }
 
     findAllModulesForCourse(courseId) {
-        console.log(this.state.courseId)
         this.moduleService
             .findAllModulesForCourse(courseId)
             .then((modules) => {this.setModules(modules)});
