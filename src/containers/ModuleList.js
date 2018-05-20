@@ -14,15 +14,7 @@ class ModuleList extends React.Component {
             inputModule: {
                 title: ''
             },
-            modules:
-                [
-                //     {title: 'Module 1 - jQuery', id: 123},
-                // {title: 'Module 2 - React', id: 234},
-                // {title: 'Module 3 - Redux', id: 345},
-                // {title: 'Module 4 - Angular', id: 456},
-                // {title: 'Module 5 - Node.js', id: 567},
-                // {title: 'Module 6 - MongoDB', id: 678}
-            ]
+            modules: []
         };
         //declare functions of this class
         this.titleChanged = this.titleChanged.bind(this);
@@ -75,7 +67,6 @@ class ModuleList extends React.Component {
 
     render() {
         return (
-           <Router>
                 <div>
                      {/*<table className="table">*/}
                          {/*<thead>*/}
@@ -101,9 +92,6 @@ class ModuleList extends React.Component {
                          {/*</tbody>*/}
                      {/*</table>*/}
 
-                     <Route path="/course/:courseId/module/:moduleId"
-                            component= {ModuleEdit}/>
-
                     <input className="form-control"
                        value={this.state.inputModule.title}
                        onChange={this.titleChanged}
@@ -116,7 +104,6 @@ class ModuleList extends React.Component {
                         {this.renderListOfModules()}
                     </ul>
                 </div>
-           </Router>
         )
     }
 
