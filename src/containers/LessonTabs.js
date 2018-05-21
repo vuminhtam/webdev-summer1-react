@@ -23,29 +23,21 @@ class LessonTabs extends React.Component {
 
     }
 
-    // componentDidMount() {
-    //     console.log('hello')
-    //     if(!this.isEmpty(this.props) && this.props.courseId !== "" && this.props.moduleId !== ""){
-    //         this.findLessonForModule(this.props.courseId, this.props.moduleId)
-    //         this.render()
-    //     }
-    // }
-
-    componentWillReceiveProps() {
-        console.log('lesson tab will receive props')
+    componentDidMount() {
+        console.log('hello')
         if(!this.isEmpty(this.props) && this.props.courseId !== "" && this.props.moduleId !== ""){
             this.findLessonForModule(this.props.courseId, this.props.moduleId)
-            //this.render()
+            this.render()
         }
     }
 
-    // componentWillReceiveProps(newProps) {
-    //     console.log('lesson tab will receive props')
-    //     if(!this.isEmpty(newProps) && newProps.courseId !== "" && newProps.moduleId !== ""){
-    //         this.findLessonForModule(newProps.courseId, newProps.moduleId)
-    //         this.render()
-    //     }
-    // }
+    componentWillReceiveProps(newProps) {
+        console.log('lesson tab will receive props')
+        if(!this.isEmpty(newProps) && newProps.courseId !== "" && newProps.moduleId !== ""){
+            this.findLessonForModule(newProps.courseId, newProps.moduleId)
+            this.render()
+        }
+    }
 
     findLessonForModule(cid, mid) {
         this.lessonService

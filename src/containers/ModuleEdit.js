@@ -29,16 +29,16 @@ class ModuleEdit extends React.Component {
             this.render()
         }
     }
-    //
-    // componentWillReceiveProps(newProps) {
-    //     console.log('empty')
-    //     if(!this.isEmpty(newProps)){
-    //         console.log(newProps)
-    //         this.setCourseId(newProps.match.params.courseId);
-    //         this.setModuleId(newProps.match.params.moduleId);
-    //         this.setTitle(this.state.moduleId);
-    //     }
-    // }
+
+    componentWillReceiveProps(newProps) {
+        console.log('empty')
+        if(!this.isEmpty(newProps)){
+            console.log(newProps)
+            this.setCourseId(newProps.match.params.courseId);
+            this.setModuleId(newProps.match.params.moduleId);
+            this.setTitle(this.state.moduleId);
+        }
+    }
 
     setCourseId(courseId) {
         this.setState({courseId: courseId});
