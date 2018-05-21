@@ -39,6 +39,7 @@ class TopicService {
     }
 
     createTopic(cid, mid, lid, topic) {
+        console.log({cid, mid, lid})
         var url = TOPIC_LESSON_URL.replace('CID', cid).replace('MID', mid).replace('LID', lid)
         return fetch(url, {
             body: JSON.stringify(topic),

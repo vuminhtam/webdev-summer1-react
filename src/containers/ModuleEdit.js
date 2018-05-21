@@ -20,20 +20,25 @@ class ModuleEdit extends React.Component {
 
     //init course and module ID
     componentDidMount() {
+        console.log('did mount')
+        console.log(this.props)
         if(!this.isEmpty(this.props)){
             this.setCourseId(this.props.match.params.courseId);
             this.setModuleId(this.props.match.params.moduleId);
             this.setTitle(this.state.moduleId);
+            this.render()
         }
     }
-
-    componentWillReceiveProps(newProps) {
-        if(!this.isEmpty(newProps)){
-            this.setCourseId(newProps.match.params.courseId);
-            this.setModuleId(newProps.match.params.moduleId);
-            this.setTitle(this.state.moduleId);
-        }
-    }
+    //
+    // componentWillReceiveProps(newProps) {
+    //     console.log('empty')
+    //     if(!this.isEmpty(newProps)){
+    //         console.log(newProps)
+    //         this.setCourseId(newProps.match.params.courseId);
+    //         this.setModuleId(newProps.match.params.moduleId);
+    //         this.setTitle(this.state.moduleId);
+    //     }
+    // }
 
     setCourseId(courseId) {
         this.setState({courseId: courseId});

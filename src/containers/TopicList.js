@@ -37,11 +37,18 @@ class TopicList extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
+        console.log(newProps)
         if(!this.isEmpty(newProps)){
+            this.setParams(newProps.match.params);
             var cid = newProps.match.params.cid;
             var mid = newProps.match.params.mid;
             var lid = newProps.match.params.lid;
             this.findTopicsForLesson(cid, mid, lid)
+        }
+        else {
+            console.log('reset')
+            this.setTopics([])
+            this.renderList()
         }
     }
 

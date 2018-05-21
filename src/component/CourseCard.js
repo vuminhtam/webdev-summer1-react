@@ -15,12 +15,14 @@ export default class CourseCard extends React.Component {
         console.log(this.props)
         if(!this.isEmpty(this.props)){
             this.getContent(this.props.match.params.tid)
+            this.render()
         }
     }
 
     componentWillReceiveProps(newProps) {
         if(!this.isEmpty(newProps)){
             this.getContent(this.props.match.params.tid)
+            this.render()
         }
     }
 

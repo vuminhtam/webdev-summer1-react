@@ -21,6 +21,13 @@ class ModuleList extends React.Component {
         this.deleteModule = this.deleteModule.bind(this);
     }
 
+    componentWillReceiveProps(newProps){
+        this.setState({courseId: newProps.courseId
+        });
+        this.findAllModulesForCourse(newProps.courseId)
+        this.render()
+    }
+
     setModules(modules) {
         this.setState({modules: modules})
     }
@@ -79,12 +86,6 @@ class ModuleList extends React.Component {
                     </ul>
                 </div>
         )
-    }
-
-    componentWillReceiveProps(newProps){
-        this.setState({courseId: newProps.courseId
-        });
-        this.findAllModulesForCourse(newProps.courseId)
     }
 
     findAllModulesForCourse(courseId) {
