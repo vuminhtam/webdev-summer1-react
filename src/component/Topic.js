@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ModuleService from "../services/ModuleService";
-import TopicService from "../services/TopicService";
 
 export default
 class Topic extends React.Component {

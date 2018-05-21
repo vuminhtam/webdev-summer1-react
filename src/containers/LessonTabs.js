@@ -3,7 +3,6 @@ import Lesson from "../component/Lesson";
 import LessonService from "../services/LessonService";
 import TopicList from "./TopicList";
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-import CourseEditor from "./CourseEditor";
 import CourseCard from "../component/CourseCard";
 
 export default
@@ -25,7 +24,7 @@ class LessonTabs extends React.Component {
     }
 
     componentWillReceiveProps() {
-        if(!this.isEmpty(this.props) && this.props.courseId != "" && this.props.moduleId != ""){
+        if(!this.isEmpty(this.props) && this.props.courseId !== "" && this.props.moduleId !== ""){
             this.findLessonForModule(this.props.courseId, this.props.moduleId)
         }
     }

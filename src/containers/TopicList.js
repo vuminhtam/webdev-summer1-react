@@ -1,6 +1,5 @@
-import React, {Component} from 'react'
+import React from 'react'
 import Topic from "../component/Topic";
-import ModuleService from "../services/ModuleService";
 import TopicService from "../services/TopicService";
 
 export default
@@ -84,7 +83,7 @@ class TopicList extends React.Component {
     }
 
     createTopic() {
-        if(this.state.input.title != "") {
+        if(this.state.input.title !== "") {
             this.topicService
                 .createTopic(
                     this.state.params.cid,

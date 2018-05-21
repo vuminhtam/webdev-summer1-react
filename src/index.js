@@ -5,7 +5,6 @@ import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 
 import CourseManager from "./containers/CourseManager";
-import CourseList from "./containers/CourseList";
 
 ReactDOM.render(
     <div>

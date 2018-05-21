@@ -1,7 +1,6 @@
 import React from 'react';
 import ModuleService from "../services/ModuleService";
-import LessonTabs from "./LessonTabs";
-import TopicList from "./TopicList";
+import LessonTabs from "./LessonTabs"
 export default
 class ModuleEdit extends React.Component {
     constructor(props) {
@@ -45,7 +44,7 @@ class ModuleEdit extends React.Component {
     }
 
     setTitle(moduleId) {
-        if(moduleId != "") {
+        if(moduleId !== "") {
             this.moduleService
                 .findModuleById(moduleId)
                 .then((moduleInfo) => {

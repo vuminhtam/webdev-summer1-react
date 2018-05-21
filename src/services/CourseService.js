@@ -1,6 +1,5 @@
 let _singleton = Symbol();
-const COURSE_API_URL = 'http://localhost:8080/api/courses';
-const ACOURSE_API_URL = 'http://localhost:8080/api/course';
+const COURSE_API_URL = 'http://localhost:8080/api/course';
 
 
 
@@ -19,7 +18,7 @@ class CourseService {
     }
 
     findCourseByID(courseID) {
-        return fetch(ACOURSE_API_URL + '/' + courseID)
+        return fetch(COURSE_API_URL + '/' + courseID)
             .then(function(response){
                 return response.json();
             });

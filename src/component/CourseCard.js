@@ -1,5 +1,4 @@
 import React from 'react'
-import ModuleService from "../services/ModuleService";
 import TopicService from "../services/TopicService";
 
 export default class CourseCard extends React.Component {

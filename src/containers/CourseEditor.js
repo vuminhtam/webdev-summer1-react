@@ -1,6 +1,5 @@
 import React from 'react'
 import ModuleList from "./ModuleList";
-import LessonTabs from "./LessonTabs";
 import ModuleEdit from "./ModuleEdit";
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import CourseService from "../services/CourseService";

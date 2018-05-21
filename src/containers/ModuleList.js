@@ -37,8 +37,7 @@ class ModuleList extends React.Component {
                 this.state.courseId,
                 this.state.inputModule)
             .then(() => {
-                this.findAllModulesForCourse
-                (this.state.courseId);
+                this.findAllModulesForCourse(this.state.courseId);
             });
 
     }
@@ -47,8 +46,7 @@ class ModuleList extends React.Component {
         this.moduleService
             .deleteModule(moduleId)
             .then(() => {
-                this.findAllModulesForCourse
-                (this.state.courseId)
+                this.findAllModulesForCourse(this.state.courseId)
             });
     }
 
