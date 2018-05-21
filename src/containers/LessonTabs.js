@@ -24,7 +24,6 @@ class LessonTabs extends React.Component {
     }
 
     componentDidMount() {
-        console.log('hello')
         if(!this.isEmpty(this.props) && this.props.courseId !== "" && this.props.moduleId !== ""){
             this.findLessonForModule(this.props.courseId, this.props.moduleId)
             this.render()
@@ -32,7 +31,6 @@ class LessonTabs extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        console.log('lesson tab will receive props')
         if(!this.isEmpty(newProps) && newProps.courseId !== "" && newProps.moduleId !== ""){
             this.findLessonForModule(newProps.courseId, newProps.moduleId)
             this.render()
@@ -50,7 +48,6 @@ class LessonTabs extends React.Component {
     }
 
     titleChanged(event) {
-        console.log(event.target.value)
         this.setState({inputLesson:
                 {title: event.target.value}
         });
@@ -79,7 +76,6 @@ class LessonTabs extends React.Component {
     }
 
     renderLessonTabs() {
-        console.log(this.state.lessons)
         var self = this;
         let lessons = this.state.lessons.map(function (lesson) {
             return <Lesson key={lesson.id}
@@ -95,7 +91,7 @@ class LessonTabs extends React.Component {
         return (
             <Router>
             <div>
-                <ul className="nav nav-tabs">
+                <ul className="nav nav-tabs" id="myTab">
                     {this.renderLessonTabs()}
                     <li className="nav-item">
                         <a className="nav-link disabled">

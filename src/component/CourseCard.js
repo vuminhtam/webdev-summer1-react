@@ -12,7 +12,6 @@ export default class CourseCard extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props)
         if(!this.isEmpty(this.props)){
             this.getContent(this.props.match.params.tid)
             this.render()
@@ -21,7 +20,7 @@ export default class CourseCard extends React.Component {
 
     componentWillReceiveProps(newProps) {
         if(!this.isEmpty(newProps)){
-            this.getContent(this.props.match.params.tid)
+            this.getContent(newProps.match.params.tid)
             this.render()
         }
     }
@@ -43,7 +42,8 @@ export default class CourseCard extends React.Component {
         return true;
     }
 
-    render() { return (
+    render() {
+        return (
         <div class="alert alert-success">
             <h3>{this.state.title}</h3>
             <p>empty content</p>
