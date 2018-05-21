@@ -8,7 +8,7 @@ class CourseList extends React.Component {
         super();
         this.courseService = CourseService.instance;
         this.state = {
-            course: { title: "" },
+            course: {title: '', name: ''},
             courses: []};
         this.titleChanged = this.titleChanged.bind(this);
         this.createCourse = this.createCourse.bind(this);
@@ -39,7 +39,11 @@ class CourseList extends React.Component {
     render() {
         return (
             <div>
-                <h2>Course List</h2>
+                    <div className="container">
+                        <h2 className="text-center text-uppercase text-secondary mb-0">
+                            List of Courses
+                        </h2>
+                    </div>
                 <table className="table">
                     <thead>
                     <tr>
@@ -79,9 +83,19 @@ class CourseList extends React.Component {
             alert("Please enter course title");
         }
         else {
-            this.courseService
-                .createCourse(this.state.course)
-                .then(() => { this.findAllCourses(); });
+            var str = this.state.course.title;
+            var res = str.split(":");
+            if(res.length != 2) {
+                alert("Create a course under format title:name")
+            }
+            else {
+                this.setState({
+                    course: { title: res[0], name: res[1] }
+                });
+                this.courseService
+                    .createCourse({ title: res[0], name: res[1] })
+                    .then(() => { this.findAllCourses(); });
+            }
         }
     }
 

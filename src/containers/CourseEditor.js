@@ -37,7 +37,17 @@ class CourseEditor extends React.Component {
         return (
             <Router>
                 <div>
-                    <h2>{this.state.title}: {this.state.name}</h2>
+
+                    <nav className="navbar navbar-inverse bg-light">
+                        <div className="container-fluid">
+                            <div className="navbar-header">
+                                <a className="navbar-brand">
+                                    <h2>{this.state.title}: {this.state.name}</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+
                     <div className="row">
                         <div className="col-4">
                             <ModuleList courseId={this.state.id}/>
