@@ -15,6 +15,7 @@ class ModuleList extends React.Component {
             },
             modules: []
         };
+
         this.moduleService = ModuleService.instance;
         //declare functions of this class
         this.titleChanged = this.titleChanged.bind(this);

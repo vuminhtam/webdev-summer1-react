@@ -1,12 +1,15 @@
 import React from 'react'
 import Topic from "../component/Topic";
 import TopicService from "../services/TopicService";
+import { Redirect } from 'react-router-dom'
+
 
 export default
 class TopicList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            redirected: false,
             params: {
               cid:'', mid:'', lid:''
             },
@@ -102,6 +105,7 @@ class TopicList extends React.Component {
     render() {
         return (
             <div>
+                {this.redirect()}
                 <ul className="nav nav-pills">
                     {this.renderList()}
                     <li className="nav-item">
@@ -131,5 +135,23 @@ class TopicList extends React.Component {
                 return false;
         }
         return true;
+    }
+
+
+    redirect() {
+
+        if(!this.state.redirected) {
+            if(this.state.topics.length > 0) {
+                this.setState({redirected: true})
+                return <Redirect to={this.redirectLink()}></Redirect>
+            }
+        }
+    }
+
+    redirectLink() {
+        return `/course/${this.state.params.cid}
+        /module/${this.state.params.mid}
+        /lesson/${this.state.params.lid}
+        /topic/${this.state.topics[0].id}`
     }
 }
