@@ -4,12 +4,14 @@ import LessonService from "../services/LessonService";
 import TopicList from "./TopicList";
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import CourseCard from "../component/CourseCard";
+import { Redirect } from 'react-router-dom'
 
 export default
 class LessonTabs extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            redirected: false,
             inputLesson: {
                 title: ''
             },
@@ -26,14 +28,12 @@ class LessonTabs extends React.Component {
     componentDidMount() {
         if(!this.isEmpty(this.props) && this.props.courseId !== "" && this.props.moduleId !== ""){
             this.findLessonForModule(this.props.courseId, this.props.moduleId)
-            this.render()
         }
     }
 
     componentWillReceiveProps(newProps) {
         if(!this.isEmpty(newProps) && newProps.courseId !== "" && newProps.moduleId !== ""){
             this.findLessonForModule(newProps.courseId, newProps.moduleId)
-            this.render()
         }
     }
 
@@ -91,6 +91,7 @@ class LessonTabs extends React.Component {
         return (
             <Router>
             <div>
+                {this.redirect()}
                 <ul className="nav nav-tabs" id="myTab">
                     {this.renderLessonTabs()}
                     <li className="nav-item">
@@ -132,4 +133,19 @@ class LessonTabs extends React.Component {
         }
         return true;
     }
+
+    redirect() {
+
+        if(!this.state.redirected) {
+            if(this.state.lessons.length > 0) {
+                this.setState({redirected: true})
+                return <Redirect to={this.redirectLink()}></Redirect>
+            }
+        }
+    }
+
+    redirectLink() {
+        return `/course/${this.props.courseId}/module/${this.props.moduleId}/lesson/${this.state.lessons[0].id}`
+    }
+
 }

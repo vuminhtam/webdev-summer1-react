@@ -36,7 +36,7 @@ class CourseEditor extends React.Component {
                     modules: courseInfo.modules});
             });
     }
-    
+
     render() {
         return (
             <Router>

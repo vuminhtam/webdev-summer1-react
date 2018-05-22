@@ -8,13 +8,13 @@ class ModuleList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            redirected: false,
             courseId: '',
             inputModule: {
                 title: ''
             },
             modules: []
         };
-
         this.moduleService = ModuleService.instance;
         //declare functions of this class
         this.titleChanged = this.titleChanged.bind(this);
@@ -97,16 +97,15 @@ class ModuleList extends React.Component {
     }
 
     redirect() {
-        if(!this.state.redirect) {
+        if(!this.state.redirected) {
             if(this.state.modules.length > 0) {
-                this.setState({redirect: true})
+                this.setState({redirected: true})
                 return <Redirect to={this.redirectLink()}></Redirect>
             }
         }
     }
 
     redirectLink() {
-        console.log(this.state.modules[0])
         return `/course/${this.state.courseId}/module/${this.state.modules[0].id}`
     }
 
