@@ -1,6 +1,8 @@
 import React from 'react';
 import CourseEditor from "./CourseEditor";
 import {BrowserRouter as Router, Route} from 'react-router-dom'
+
+import { Redirect } from 'react-router-dom'
 import CourseList from "./CourseList";
 
 export default

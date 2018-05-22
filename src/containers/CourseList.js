@@ -27,7 +27,8 @@ class CourseList extends React.Component {
                 function (course) {
                     return <CourseRow key={course.id}
                                       info={course}
-                                      delete={self.deleteCourse}/>
+                                      delete={self.deleteCourse}
+                                      selected={false}/>
                 }
             )
         }
