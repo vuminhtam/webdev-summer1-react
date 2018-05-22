@@ -1,6 +1,7 @@
 import React from 'react'
 import ModuleItem from "../component/ModuleItem";
 import ModuleService from "../services/ModuleService";
+import { Redirect } from 'react-router-dom'
 
 export default
 class ModuleList extends React.Component {
@@ -73,6 +74,7 @@ class ModuleList extends React.Component {
     render() {
         return (
                 <div>
+                    {this.redirect()}
                     <input className="form-control"
                        value={this.state.inputModule.title}
                        onChange={this.titleChanged}
@@ -92,6 +94,20 @@ class ModuleList extends React.Component {
         this.moduleService
             .findAllModulesForCourse(courseId)
             .then((modules) => {this.setModules(modules)});
+    }
+
+    redirect() {
+        if(!this.state.redirect) {
+            if(this.state.modules.length > 0) {
+                this.setState({redirect: true})
+                return <Redirect to={this.redirectLink()}></Redirect>
+            }
+        }
+    }
+
+    redirectLink() {
+        console.log(this.state.modules[0])
+        return `/course/${this.state.courseId}/module/${this.state.modules[0].id}`
     }
 
 }

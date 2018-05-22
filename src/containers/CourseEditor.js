@@ -36,25 +36,7 @@ class CourseEditor extends React.Component {
                     modules: courseInfo.modules});
             });
     }
-
-    redirect() {
-        if(this.state.redirect === true) {
-            return
-        }
-        if(this.state.modules.length > 0) {
-            //console.log(this.redirectLink())
-            return <Redirect to={this.redirectLink()}></Redirect>
-        }
-    }
-
-    redirectLink() {
-        this.setState({redirect: true})
-        if(this.state.modules.length > 0) {
-            return `/course/${this.state.id}/module/${this.state.modules[0].id}`
-        }
-        return `/course/${this.state.id}/module`
-    }
-
+    
     render() {
         return (
             <Router>
@@ -69,7 +51,6 @@ class CourseEditor extends React.Component {
                         </div>
                     </nav>
 
-                    {this.redirect()}
                     <div className="row">
                         <div className="col-4">
                             <ModuleList courseId={this.state.id}/>

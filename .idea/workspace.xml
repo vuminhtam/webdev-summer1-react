@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3049c50-c967-4744-b526-f6e1c190a30a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/CourseRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/CourseRow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Lesson.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Lesson.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/CourseEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/CourseList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/CourseManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CourseManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ModuleList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ModuleList.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -99,8 +95,8 @@
       <file leaf-file-name="CourseEditor.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/CourseEditor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+            <state relative-caret-position="344">
+              <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -111,8 +107,8 @@
       <file leaf-file-name="ModuleList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/ModuleList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+            <state relative-caret-position="87">
+              <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -120,8 +116,8 @@
       <file leaf-file-name="CourseList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/CourseList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            <state relative-caret-position="1131">
+              <caret line="81" column="20" lean-forward="true" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -169,7 +165,6 @@
         <option value="$PROJECT_DIR$/src/component/Topic.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/containers/ModuleList.js" />
         <option value="$PROJECT_DIR$/src/containers/TopicList.js" />
         <option value="$PROJECT_DIR$/src/containers/ModuleEdit.js" />
         <option value="$PROJECT_DIR$/src/containers/LessonTabs.js" />
@@ -180,6 +175,7 @@
         <option value="$PROJECT_DIR$/src/component/CourseRow.js" />
         <option value="$PROJECT_DIR$/src/component/ModuleItem.js" />
         <option value="$PROJECT_DIR$/src/containers/CourseList.js" />
+        <option value="$PROJECT_DIR$/src/containers/ModuleList.js" />
         <option value="$PROJECT_DIR$/src/containers/CourseEditor.js" />
       </list>
     </option>
@@ -312,7 +308,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68018000" />
+    <option name="totallyTimeSpent" value="68916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="399" y="23" width="1015" height="815" extended-state="0" />
@@ -670,13 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/ModuleList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/LessonTabs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -713,15 +702,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/CourseList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="1131">
+          <caret line="81" column="20" lean-forward="true" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/ModuleList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/CourseEditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        <state relative-caret-position="344">
+          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
