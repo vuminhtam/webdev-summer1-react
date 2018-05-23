@@ -4,6 +4,7 @@ import ModuleEdit from "./ModuleEdit";
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import CourseService from "../services/CourseService";
 import { Redirect } from 'react-router-dom'
+import CourseTitle from "../component/CourseTitle";
 
 
 export default
@@ -41,16 +42,7 @@ class CourseEditor extends React.Component {
         return (
             <Router>
                 <div>
-                    <nav className="navbar navbar-inverse bg-light">
-                        <div className="container-fluid">
-                            <div className="navbar-header">
-                                <a className="navbar-brand">
-                                    <h2>{this.state.title}: {this.state.name}</h2>
-                                </a>
-                            </div>
-                        </div>
-                    </nav>
-
+                    <CourseTitle title={this.state.title} name={this.state.name}/>
                     <div className="row">
                         <div className="col-4">
                             <ModuleList courseId={this.state.id}/>
