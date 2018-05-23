@@ -63,11 +63,27 @@ class ModuleList extends React.Component {
         var self = this;
         var i = 1;
         let modules = this.state.modules.map(function (module) {
-            return <ModuleItem key={module.id}
-                               order={i++}
-                               info={module}
-                               courseId={self.state.courseId}
-                               delete={self.deleteModule}/>
+            if(i == 1) {
+                return <ModuleItem key={module.id}
+                                   order={i++}
+                                   info={module}
+                                   courseId={self.state.courseId}
+                                   delete={self.deleteModule}
+                                   selected={true}/>
+            }
+            else {
+                return <ModuleItem key={module.id}
+                                   order={i++}
+                                   info={module}
+                                   courseId={self.state.courseId}
+                                   delete={self.deleteModule}
+                                   selected={false}/>
+            }
+            // return <ModuleItem key={module.id}
+            //                    order={i++}
+            //                    info={module}
+            //                    courseId={self.state.courseId}
+            //                    delete={self.deleteModule}/>
         });
         return modules;
     }
@@ -75,7 +91,7 @@ class ModuleList extends React.Component {
     render() {
         return (
                 <div>
-                    {this.redirect()}
+                    {/*{this.redirect()}*/}
                     <input className="form-control"
                        value={this.state.inputModule.title}
                        onChange={this.titleChanged}
