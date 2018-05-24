@@ -1,6 +1,8 @@
 let _singleton = Symbol();
-const COURSE_MODULE_API_URL = 'http://localhost:8080/api/course/CID/module';;
-const MODULE_API_URL = 'http://localhost:8080/api/module/MID';
+const SERVER_URL = 'https://webdev-summer1-2018-tamvu.herokuapp.com'
+
+const COURSE_MODULE_API_URL = SERVER_URL + '/api/course/CID/module'
+const MODULE_API_URL = SERVER_URL + '/api/module/MID'
 
 
 export default class ModuleService {

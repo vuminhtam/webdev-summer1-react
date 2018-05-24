@@ -1,5 +1,6 @@
 let _singleton = Symbol();
-const COURSE_API_URL = 'http://localhost:8080/api/course';
+const SERVER_URL = 'https://webdev-summer1-2018-tamvu.herokuapp.com'
+const COURSE_API_URL = SERVER_URL + '/api/course';
 
 
 

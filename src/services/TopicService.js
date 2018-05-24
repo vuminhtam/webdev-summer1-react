@@ -1,6 +1,7 @@
 let _singleton = Symbol();
-const TOPIC_API_URL = 'http://localhost:8080/api/topic';
-const TOPIC_LESSON_URL = 'http://localhost:8080/api/course/CID/module/MID/lesson/LID/topic'
+const SERVER_URL = 'https://webdev-summer1-2018-tamvu.herokuapp.com'
+const TOPIC_API_URL = SERVER_URL + '/api/topic';
+const TOPIC_LESSON_URL = SERVER_URL + '/api/course/CID/module/MID/lesson/LID/topic'
 
 
 export default
