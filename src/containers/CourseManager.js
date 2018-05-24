@@ -7,8 +7,12 @@ export default
 class CourseManager extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {userId: ''}
     }
 
+    componentWillMount(newProps) {
+        this.setState({userId: newProps.uid})
+    }
 
     render() {
         return (
