@@ -50,7 +50,7 @@ class CourseList extends React.Component {
                     <tr>
                         <th><input onChange={this.titleChanged}
                                    className="form-control" id="titleFld"
-                                   placeholder="Enter a course title ie CS1800"/></th>
+                                   placeholder="CourseTitle:CourseName ie CS4500:Web Development"/></th>
                         <th><button onClick={this.createCourse}
                                     className="btn btn-primary">
                             <i className="fa fa-plus"></i>

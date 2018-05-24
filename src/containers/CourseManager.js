@@ -5,11 +5,20 @@ import CourseList from "./CourseList";
 
 export default
 class CourseManager extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
+
     render() {
         return (
             <Router>
                 <div>
                     <div className="container-fluid">
+                        <Route path="/"
+                               component={CourseList}>
+                        </Route>
+
                         <Route path="/courses"
                                component={CourseList}>
                         </Route>
