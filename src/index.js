@@ -6,11 +6,14 @@ import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 import CourseManager from "./containers/CourseManager";
 import NavBar from "./component/Navbar";
+import Hello from "./component/Hello";
+
 import CourseList from "./containers/CourseList";
 
 ReactDOM.render(
     <Router>
     <div>
+        <Hello/>
         <NavBar/>
         <CourseManager/>
     </div>
