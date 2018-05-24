@@ -7,11 +7,6 @@ export default
 class CourseManager extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {userId: ''}
-    }
-
-    componentWillMount(newProps) {
-        this.setState({userId: newProps.uid})
     }
 
     render() {
@@ -19,13 +14,16 @@ class CourseManager extends React.Component {
             <Router>
                 <div>
                     <div className="container-fluid">
-
                         <Route path="/courses"
                                component={CourseList}>
                         </Route>
 
                         <Route path="/course/:id"
                                component={CourseEditor}>
+                        </Route>
+
+                        <Route path="/user/:userId/courses"
+                               component={CourseList}>
                         </Route>
 
                     </div>

@@ -1,7 +1,8 @@
 let _singleton = Symbol();
 const SERVER_URL = 'https://webdev-summer1-2018-tamvu.herokuapp.com'
-const COURSE_API_URL = SERVER_URL + '/api/course';
-
+const LOCAL_URL = 'http://localhost:8080'
+const COURSE_API_URL = LOCAL_URL + '/api/course';
+const COURSE_USER_URL = LOCAL_URL + '/api/user/UID/course'
 
 
 export default
@@ -18,12 +19,13 @@ class CourseService {
         return this[_singleton]
     }
 
-    findCourseByID(courseID) {
-        return fetch(COURSE_API_URL + '/' + courseID)
+    findAllCoursesByUID(uid) {
+        return fetch(COURSE_USER_URL.replace('UID', uid))
             .then(function(response){
                 return response.json();
             });
     }
+
 
     findAllCourses() {
         return fetch(COURSE_API_URL)
@@ -32,8 +34,28 @@ class CourseService {
             });
     }
 
+    findCourseByID(courseID) {
+        return fetch(COURSE_API_URL + '/' + courseID)
+            .then(function(response){
+                return response.json();
+            });
+    }
+
+
     createCourse(course) {
         return fetch(COURSE_API_URL, {
+            body: JSON.stringify(course),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST'
+        }).then(function (response) {
+            return response.json();
+        })
+    }
+
+    createCourseForUser(course) {
+        return fetch(COURSE_USER_URL.replace('UID', course.uid), {
             body: JSON.stringify(course),
             headers: {
                 'Content-Type': 'application/json'

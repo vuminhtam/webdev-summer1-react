@@ -16,11 +16,11 @@ class NavBar extends React.Component {
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
-                    <a className="navbar-brand" href="/courses">COURSE MANAGER</a>
+                    <a className="navbar-brand" href="/courses">COURSE ADMINISTRATION</a>
 
                     <div>
                             <button className="btn btn-outline-info">
-                                <a href={HW1_URL}>HW1 </a>
+                                <a href={HW1_URL}>User Admin </a>
                                 <i className="fas fa-sign-out-alt"></i>
                             </button>
 

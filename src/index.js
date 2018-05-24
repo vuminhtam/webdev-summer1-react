@@ -1,5 +1,5 @@
 import React from 'react';
-import Route, Router from 'react-router'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import ReactDOM from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
@@ -12,9 +12,6 @@ ReactDOM.render(
     <Router>
     <div>
         <NavBar/>
-        <Route path="/uid/:uid"
-               component={CourseList}>
-        </Route>
         <CourseManager/>
     </div>
     </Router>,

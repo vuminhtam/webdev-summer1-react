@@ -5,7 +5,6 @@ class CourseRow extends React.Component {
     constructor(props) {
         super(props)
         this.state = {cid:'', mid:'', lid:'', tid:''}
-
     }
 
     setParam(props) {
@@ -38,6 +37,9 @@ class CourseRow extends React.Component {
                     </Link>
                 </td>
                 <td>
+                    Owned by {this.getOwner()}
+                </td>
+                <td>
                     <span className="float-right">
                         <button onClick={() =>
                         {this.props.delete(this.props.info.id)}}
@@ -50,6 +52,10 @@ class CourseRow extends React.Component {
             </tr>
 
         )
+    }
+
+    getOwner() {
+        return this.props.info.owner.username
     }
 }
 export default CourseRow;

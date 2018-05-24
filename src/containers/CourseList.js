@@ -8,11 +8,14 @@ class CourseList extends React.Component {
         super();
         this.courseService = CourseService.instance;
         this.state = {
+            userId: '1152', //admin
             course: {title: '', name: ''},
             courses: []};
         this.titleChanged = this.titleChanged.bind(this);
         this.createCourse = this.createCourse.bind(this);
         this.deleteCourse = this.deleteCourse.bind(this);
+        this.createCourseForUser = this.createCourseForUser.bind(this);
+
     }
 
     componentDidMount() {
@@ -20,6 +23,7 @@ class CourseList extends React.Component {
     }
 
     renderCourseRows() {
+        console.log(this.state.courses)
         let courses = null;
         var self = this;
         if(this.state) {
@@ -51,7 +55,7 @@ class CourseList extends React.Component {
                         <th><input onChange={this.titleChanged}
                                    className="form-control" id="titleFld"
                                    placeholder="CourseTitle:CourseName ie CS4500:Web Development"/></th>
-                        <th><button onClick={this.createCourse}
+                        <th><button onClick={this.createCourseForUser}
                                     className="btn btn-primary">
                             <i className="fa fa-plus"></i>
                         </button></th>
@@ -94,8 +98,36 @@ class CourseList extends React.Component {
                     course: { title: res[0], name: res[1] }
                 });
                 this.courseService
-                    .createCourse({ title: res[0], name: res[1] })
-                    .then(() => { this.findAllCourses(); });
+                    .createCourse({
+                        title: res[0],
+                        name: res[1],
+                        owner_id: 1152}) //1152 is admin
+                    .then(() => {this.findAllCourses(); });
+            }
+        }
+    }
+
+    createCourseForUser() {
+        //console.log(this.state)
+        if(this.state.course.title === "") {
+            alert("Please enter course title");
+        }
+        else {
+            var str = this.state.course.title;
+            var res = str.split(":");
+            if(res.length != 2) {
+                alert("Create a course under format title:name")
+            }
+            else {
+                this.setState({
+                    course: { title: res[0], name: res[1]}
+                });
+                this.courseService
+                    .createCourseForUser({
+                        title: res[0],
+                        name: res[1],
+                        uid: this.state.userId}) //1152 is admin
+                    .then((response) => { this.findAllCourses(); });
             }
         }
     }
