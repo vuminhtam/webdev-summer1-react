@@ -15,9 +15,6 @@ class CourseManager extends React.Component {
             <Router>
                 <div>
                     <div className="container-fluid">
-                        <Route path="/"
-                               component={CourseList}>
-                        </Route>
 
                         <Route path="/courses"
                                component={CourseList}>
