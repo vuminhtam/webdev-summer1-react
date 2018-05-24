@@ -1,8 +1,8 @@
 let _singleton = Symbol();
-const SERVER_URL = 'https://webdev-summer1-2018-tamvu.herokuapp.com'
+const REMOTE_URL = 'https://webdev-summer1-2018-tamvu.herokuapp.com'
 const LOCAL_URL = 'http://localhost:8080'
-const COURSE_API_URL = LOCAL_URL + '/api/course';
-const COURSE_USER_URL = LOCAL_URL + '/api/user/UID/course'
+const COURSE_API_URL = REMOTE_URL + '/api/course';
+const COURSE_USER_URL = REMOTE_URL + '/api/user/UID/course'
 
 
 export default
