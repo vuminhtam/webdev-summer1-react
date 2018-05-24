@@ -23,7 +23,6 @@ class CourseList extends React.Component {
     }
 
     renderCourseRows() {
-        console.log(this.state.courses)
         let courses = null;
         var self = this;
         if(this.state) {
@@ -108,7 +107,6 @@ class CourseList extends React.Component {
     }
 
     createCourseForUser() {
-        //console.log(this.state)
         if(this.state.course.title === "") {
             alert("Please enter course title");
         }
