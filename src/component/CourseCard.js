@@ -6,13 +6,19 @@ export default class CourseCard extends React.Component {
         super(props);
         this.topicService = TopicService.instance;
         this.state = {
+            id: '',
             title:'',
             content:''
         }
+        this.setTID = this.setTID.bind(this)
+        this.WIDGET_URL = "https://arcane-shore-13623.herokuapp.com/"
+            + "topic/" + this.props.match.params.tid + "/widget"
     }
+
 
     componentDidMount() {
         if(!this.isEmpty(this.props)){
+            this.setTID(this.props.match.params.tid)
             this.getContent(this.props.match.params.tid)
             this.render()
         }
@@ -20,6 +26,7 @@ export default class CourseCard extends React.Component {
 
     componentWillReceiveProps(newProps) {
         if(!this.isEmpty(newProps)){
+            this.setTID(newProps.match.params.tid)
             this.getContent(newProps.match.params.tid)
             this.render()
         }
@@ -44,11 +51,25 @@ export default class CourseCard extends React.Component {
 
     render() {
         return (
-        <div class="alert alert-success">
-            <h3>{this.state.title}</h3>
-            <p>empty content</p>
+        <div>
+            <a href={this.WIDGET_URL}>
+                <i className="fas fa-external-link-alt"></i>
+            </a> <h3>{this.state.title}</h3>
+            <div dangerouslySetInnerHTML={this.iframe()} />
         </div>
         )
     }
-}
 
+    setTID(id) {
+        this.setState({id: id})
+        this.WIDGET_URL = "https://arcane-shore-13623.herokuapp.com/"
+            + "topic/" + this.state.id + "/widget"
+    }
+
+    iframe() {
+        return {
+            __html: '<iframe src= ' +
+           this.WIDGET_URL + ' width="100%" height="1000"></iframe>'
+        }
+    }
+}

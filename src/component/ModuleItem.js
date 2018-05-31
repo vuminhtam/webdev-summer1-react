@@ -36,7 +36,6 @@ class ModuleItem extends React.Component {
 
     redirect() {
         if(this.props.selected && !this.state.redirected) {
-            console.log('redirect to ' + this.redirectLink())
             this.setState({redirected: true})
             return <Redirect to={this.redirectLink()}></Redirect>
         }
